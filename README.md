@@ -1,1 +1,35 @@
 # CoCo-xroar-variable-counter
+
+This repo provides a way to profile the access of Tandy CoCo BASIC variables for programs requiring performance improvements.
+When a variable is encountered by the BASIC interpreter a linear search for the variable is performed in the variable table.
+Knowing the most used variables allows the writer of the program to use the DIM command to define those variables first so that they are at the top of the variable table.
+When no optimization of the variable order is performed, the table will be built based on the order that the variables are encountered in the BASIC program.
+
+## Following are needed
+
+- disk image of BASIC program under test
+- xroar along with required roms
+
+https://www.6809.org.uk/xroar/
+
+- m6809-gdb
+
+https://www.6809.org.uk/dragon/m6809-gdb.shtml
+
+
+## Steps
+
+### In one terminal session start xroar
+
+```
+$ xroar -gdb -machine coco3 -kbd-translate -load-fd0 PACMAN.DSK -joy-left kjoy0
+```
+
+### In another terminal session start gdb
+
+```
+$ m6809-gdb -x basic_variables_lookup.gdb
+```
+
+NOTE: If m6809-gdb fails to connect check the xroar session to make sure it didn't fail to create the listening port 65520 at startup.
+
