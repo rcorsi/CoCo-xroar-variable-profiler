@@ -30,7 +30,7 @@ break *0xb38f
 # 2. Printout BASIC variable information
 commands
   silent
-  printf "Variable Lookup Detected! Name: %c%c%c\n", (char)(*(unsigned char*) 0x0037 & 0x7f), (char)(*(unsigned char*) 0x0038 & 0x7f), (char)(*(unsigned char*) 0x0038 & 0x80) ? '$' : ' '
+  printf "Variable Lookup Detected! Name: %c%c%c\n", (char)(*(unsigned char*) 0x0037), (char)(*(unsigned char*) 0x0038 & 0x7f), (char)(*(unsigned char*) 0x0038 & 0x80) ? '$' : ' '
   continue
 end
 
@@ -40,7 +40,7 @@ break *0xb404
 # 2. Printout BASIC array information
 commands
   silent
-  printf "Array Lookup Detected! Name: %c%c%c\n", (char)(*(unsigned char*) 0x0037 & 0x7f), (char)(*(unsigned char*) 0x0038 & 0x7f), (char)(*(unsigned char*) 0x0038 & 0x80) ? '$' : ' '
+  printf "Array Lookup Detected! Name: %c%c%c\n", (char)(*(unsigned char*) 0x0037), (char)(*(unsigned char*) 0x0038 & 0x7f), (char)(*(unsigned char*) 0x0038 & 0x80) ? '$' : ' '
   continue
 end
 
