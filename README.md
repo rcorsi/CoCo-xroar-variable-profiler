@@ -45,7 +45,7 @@ $ xroar -gdb -machine coco3 -kbd-translate -load-fd0 PACMAN.DSK -joy-left kjoy0
 ### In another terminal session start gdb
 
 ```
-$ m6809-gdb -x basic_variables_lookup.gdb
+$ m6809-gdb -x basic_variables_lookup.gdb -x dump_variable_tables.gdb
 ```
 
 NOTE: If m6809-gdb fails to connect check the xroar session to make sure it didn't fail to create the listening port 65520 at startup.
