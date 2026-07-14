@@ -10,7 +10,9 @@ Information from the "Unravelled Series" of books (e.g. "BASIC Unravelled") was 
 ## Following are needed
 
 - disk image of BASIC program under test
-- gdb profiling script from this repo [basic_variables_lookup.gdb](basic_variables_lookup.gdb)
+- gdb profiling scripts from this repo:
+   - [basic_variables_lookup.gdb](basic_variables_lookup.gdb)
+   - [dump_variable_tables.gdb](dump_variable_tables.gdb)
 - xroar along with required roms
 
 https://www.6809.org.uk/xroar/
@@ -33,21 +35,34 @@ these are also needed (but not mentioned on the project page)
 sudo apt install bison flex libreadline-dev
 ```
 
+## How to use the profiling scripts
 
-## Steps
+Two terminal sessions are needed
 
-### In one terminal session start xroar
+### First Terminal session
+
+1- Start xroar and provide the program needing profiling
+
+```
+$ xroar -gdb -machine coco3 -kbd-translate -load TEST.BAS
+```
+
+or
 
 ```
 $ xroar -gdb -machine coco3 -kbd-translate -load-fd0 PACMAN.DSK -joy-left kjoy0
 ```
 
-### In another terminal session start gdb
+2- Use DIR and LOAD commands to load from Disk Image.
+
+3- Or if the TEST.BAS was passed as a file, then use the CLOAD command to load it into the interpreter.
+
+### Second Terminal session
+
+1- start gdb
 
 ```
 $ m6809-gdb -x basic_variables_lookup.gdb -x dump_variable_tables.gdb
 ```
 
 NOTE: If m6809-gdb fails to connect check the xroar session to make sure it didn't fail to create the listening port 65520 at startup.
-
-
