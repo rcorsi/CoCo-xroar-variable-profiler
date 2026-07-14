@@ -5,9 +5,12 @@ When a variable is encountered by the BASIC interpreter a linear search for the 
 Knowing the most used variables allows the writer of the program to use the DIM command to define those variables first so that they are at the top of the variable table.
 When no optimization of the variable order is performed, the table will be built based on the order that the variables are encountered in the BASIC program.
 
+Information from the "Color BASIC Unravelled" series of books was used to help create the profiling script.
+
 ## Following are needed
 
 - disk image of BASIC program under test
+- gdb profiling script from this repo [basic_variables_lookup.gdb](basic_variables_lookup.gdb)
 - xroar along with required roms
 
 https://www.6809.org.uk/xroar/
@@ -16,7 +19,7 @@ https://www.6809.org.uk/xroar/
 
 https://www.6809.org.uk/dragon/m6809-gdb.shtml
 
-### Dependancies for building m6809-gdb from source
+### Dependencies for building m6809-gdb from source
 
 Following packages are needed on Ubuntu (already mentioned on the project page)
 
@@ -46,4 +49,5 @@ $ m6809-gdb -x basic_variables_lookup.gdb
 ```
 
 NOTE: If m6809-gdb fails to connect check the xroar session to make sure it didn't fail to create the listening port 65520 at startup.
+
 
