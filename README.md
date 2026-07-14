@@ -2,10 +2,10 @@
 
 This repo provides a way to profile the access of Tandy CoCo BASIC variables for programs requiring performance improvements.
 When a variable is encountered by the BASIC interpreter a linear search for the variable is performed in the variable table.
-Knowing the most used variables allows the writer of the program to use the DIM command to define those variables first so that they are at the top of the variable table.
+Knowing the most used variables allows the writer of the program to use the DIM statement to define those variables first so that they are at the top of the variable table search order.
 When no optimization of the variable order is performed, the table will be built based on the order that the variables are encountered in the BASIC program.
 
-Information from the "Color BASIC Unravelled" series of books was used to help create the profiling script.
+Information from the "Unravelled Series" of books (e.g. "BASIC Unravelled") was used to help create the profiling scripts.
 
 ## Following are needed
 
