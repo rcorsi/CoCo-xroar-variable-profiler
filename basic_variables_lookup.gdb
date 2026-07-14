@@ -18,11 +18,6 @@
 # connect to xroar already running in a different terminal session
 target remote 127.0.0.1:65520
 
-# setup the log output
-set logging file basic_variables_log.log
-set logging enabled on
-set pagination off
-
 
 # 1. Break once we know it is a VARIABLE and not an ARRAY
 break *0xb38f
@@ -45,5 +40,12 @@ commands
 end
 
 info breakpoints
+
+# setup the log output
+set logging file basic_variables_log.log
+set logging enabled on
+set pagination off
+
+# resume BASIC interpreter
 continue
 
