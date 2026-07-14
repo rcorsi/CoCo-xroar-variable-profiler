@@ -42,6 +42,7 @@ end
 info breakpoints
 
 # setup the log output
+shell date "+%Y-%m-%d"
 set logging file basic_variables_log.log
 set logging enabled on
 set pagination off
