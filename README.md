@@ -16,6 +16,20 @@ https://www.6809.org.uk/xroar/
 
 https://www.6809.org.uk/dragon/m6809-gdb.shtml
 
+### Dependancies for building m6809-gdb from source
+
+Following packages are needed on Ubuntu (already mentioned on the project page)
+
+```
+sudo apt install libgmp-dev libmpfr-dev libexpat1-dev
+```
+
+these are also needed (but not mentioned on the project page)
+
+```
+sudo apt install bison flex libreadline-dev
+```
+
 
 ## Steps
 
