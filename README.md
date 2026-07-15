@@ -1,4 +1,4 @@
-# CoCo-xroar-variable-counter
+# CoCo-xroar-variable-profiler
 
 This repo provides a way to profile the access of Tandy CoCo BASIC variables for programs requiring performance improvements.
 When a variable is encountered by the BASIC interpreter a linear search for the variable is performed in the variable table.
