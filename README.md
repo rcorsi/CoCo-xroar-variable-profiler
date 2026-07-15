@@ -63,6 +63,8 @@ $ xroar -gdb -machine coco3 -kbd-translate -load-fd0 PACMAN.DSK -joy-left kjoy0
 
 ### Second Terminal session
 
+NOTE: Before starting the m6809-gdb debugger, you may want to delete the log file `basic_variables_log.log` to avoid having old information from a previous run.
+
 1- start gdb at the appropriate time (before or after RUNning the program, depending on program specifics)
 
 ```
@@ -75,14 +77,14 @@ NOTE: If m6809-gdb fails to connect check the xroar session to make sure it didn
 ### When done with BASIC program
 
 Do not stop the xroar emulator.
-Use the CTRL-C in the gdb debugger to stop the run and use `dump-tables` in gdb to dump the list showing the variables table search order.
+Use the CTRL-C in the gdb debugger to stop the run and use the user created `dump-tables` command in gdb to dump the list showing the variables table search order.
 
 Exit gdb.
 Exit xroar.
 
 ### What to do with the log file once created
 
-Get the list of variables with the number of times accessed in descending order.
+Use the following command line to get the list of variables with the number of times accessed in descending order.
 
 ```
 $ grep "Variable Lookup" basic_variables_log.log | sort | uniq -c | sort -n -r
@@ -100,7 +102,7 @@ $ grep "Variable Lookup" basic_variables_log.log | sort | uniq -c | sort -n -r
       2 Variable Lookup Detected! Name: B1
 ```
 
-Get a list of array variables in most to least accessed arrays.
+Use the following command line to get the list of arrays with the number of times accessed in descending order.
 
 ```
 $ grep "Array Lookup" basic_variables_log.log | sort | uniq -c | sort -n -r
@@ -114,4 +116,4 @@ $ grep "Array Lookup" basic_variables_log.log | sort | uniq -c | sort -n -r
 
 # Next Steps
 
-With the new information from the profiling results some changes to the BASIC code might be required. Changing the order may improve the performance. Retest until satisfied with the results.
+With the new information gathered from the profiling results some changes to the BASIC code might be required. Changing the variable or array declaration order (using DIM at the start of the program, for example) may improve the performance. Retest until satisfied with the results.
