@@ -44,10 +44,12 @@ end
 info breakpoints
 
 # setup the log output
-shell date "+%Y-%m-%d"
 set logging file basic_variables_log.log
 set logging enabled on
 set pagination off
+
+# following command works if m6809-gdb supports python, remove it if python not supported
+python import datetime; gdb.execute(f'printf "Log Start: {datetime.datetime.now()}\\n"')
 
 # resume BASIC interpreter
 continue

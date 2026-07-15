@@ -23,6 +23,8 @@ https://www.6809.org.uk/xroar/
 
 https://www.6809.org.uk/dragon/m6809-gdb.shtml
 
+Build it with Python support by adding --with-python when running the configure script.
+
 ### Dependencies for building m6809-gdb from source
 
 Following packages are needed on Ubuntu (already mentioned on the project page)
@@ -35,6 +37,12 @@ these are also needed (but not mentioned on the project page)
 
 ```
 sudo apt install bison flex libreadline-dev
+```
+
+these might be needed for python support in m6809-gdb
+
+```
+sudo apt install build-essential texinfo wget python3-dev
 ```
 
 ## How to use the profiling scripts
