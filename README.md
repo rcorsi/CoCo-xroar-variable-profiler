@@ -79,7 +79,7 @@ NOTE: If m6809-gdb fails to connect check the xroar session to make sure it didn
 Do not stop the xroar emulator.
 Use the CTRL-C in the gdb debugger to stop the run and use the user created `dump-tables` command in gdb to dump the list showing the variables table search order.
 
-<pre><code>
+```
 (gdb) dump-tables
 Dumping Variable Table (0x1e89 - 0x1ec1)
 Var: AA$
@@ -94,9 +94,10 @@ Dumping Array Table (0x1ec1 - 0x1f01)
 Arr: A storage: 0x25 (37)
 Arr: B$ storage: 0x1b (27)
 (gdb)
-</code></pre>
+```
 
 Exit gdb.
+
 Exit xroar.
 
 ### What to do with the log file once created
@@ -107,7 +108,7 @@ Use the following command line to get the list of variables with the number of t
 $ grep "Variable Lookup" basic_variables_log.log | sort | uniq -c | sort -n -r
 ```
 
-<pre><code>
+```
 $ grep "Variable Lookup" basic_variables_log.log | sort | uniq -c | sort -n -r
       4 Variable Lookup Detected! Name: GG$
       4 Variable Lookup Detected! Name: AA$
@@ -117,7 +118,7 @@ $ grep "Variable Lookup" basic_variables_log.log | sort | uniq -c | sort -n -r
       2 Variable Lookup Detected! Name: C
       2 Variable Lookup Detected! Name: BB
       2 Variable Lookup Detected! Name: B1
-</code></pre>
+```
 
 Use the following command line to get the list of arrays with the number of times accessed in descending order.
 
@@ -125,11 +126,11 @@ Use the following command line to get the list of arrays with the number of time
 $ grep "Array Lookup" basic_variables_log.log | sort | uniq -c | sort -n -r
 ```
 
-<pre><code>
+```
 $ grep "Array Lookup" basic_variables_log.log | sort | uniq -c | sort -n -r
       6 Array Lookup Detected! Name: A
       2 Array Lookup Detected! Name: B$
-</code></pre>
+```
 
 # Next Steps
 
