@@ -81,7 +81,7 @@ Use the CTRL-C in the gdb debugger to stop the run and use the user created `dum
 
 ```
 (gdb) dump-tables
-Dumping Variable Table (0x1e89 - 0x1ec1)
+Dumping Variable Table (0x1eba - 0x1ef9)
 Var: AA$
 Var: BB
 Var: C
@@ -90,10 +90,12 @@ Var: E
 Var: FF
 Var: GG$
 Var: B1
-Dumping Array Table (0x1ec1 - 0x1f01)
+Var: BI
+Dumping Array Table (0x1ef9 - 0x1f39)
 Arr: A storage: 0x25 (37)
 Arr: B$ storage: 0x1b (27)
-(gdb)
+(gdb) exit
+
 ```
 
 Exit gdb.
@@ -110,14 +112,15 @@ $ grep "Variable Lookup" basic_variables_log.log | sort | uniq -c | sort -n -r
 
 ```
 $ grep "Variable Lookup" basic_variables_log.log | sort | uniq -c | sort -n -r
+      6 Variable Lookup Detected! Name: BI
       4 Variable Lookup Detected! Name: GG$
-      4 Variable Lookup Detected! Name: AA$
-      2 Variable Lookup Detected! Name: FF
-      2 Variable Lookup Detected! Name: E
-      2 Variable Lookup Detected! Name: D
-      2 Variable Lookup Detected! Name: C
-      2 Variable Lookup Detected! Name: BB
-      2 Variable Lookup Detected! Name: B1
+      3 Variable Lookup Detected! Name: AA$
+      1 Variable Lookup Detected! Name: FF
+      1 Variable Lookup Detected! Name: E
+      1 Variable Lookup Detected! Name: D
+      1 Variable Lookup Detected! Name: C
+      1 Variable Lookup Detected! Name: BB
+      1 Variable Lookup Detected! Name: B1
 ```
 
 Use the following command line to get the list of arrays with the number of times accessed in descending order.
@@ -127,9 +130,9 @@ $ grep "Array Lookup" basic_variables_log.log | sort | uniq -c | sort -n -r
 ```
 
 ```
-$ grep "Array Lookup" basic_variables_log.log | sort | uniq -c | sort -n -r
-      6 Array Lookup Detected! Name: A
-      2 Array Lookup Detected! Name: B$
+$  grep "Array Lookup" basic_variables_log.log | sort | uniq -c | sort -n -r
+      3 Array Lookup Detected! Name: A
+      1 Array Lookup Detected! Name: B$
 ```
 
 # Next Steps
