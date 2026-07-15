@@ -1,3 +1,7 @@
+#
+# Copyright (c) 2026 Rocco Corsi <5201151+rcorsi@users.noreply.github.com>
+#
+
 define dump-tables
     dont-repeat
     dump-basic-variable-table

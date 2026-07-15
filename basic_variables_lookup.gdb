@@ -1,4 +1,6 @@
 #
+# Copyright (c) 2026 Rocco Corsi <5201151+rcorsi@users.noreply.github.com>
+#
 #### start debugging session like this:
 #
 # Session 1 # xroar -gdb -machine coco3 -kbd-translate ...
