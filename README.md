@@ -47,6 +47,8 @@ sudo apt install build-essential texinfo wget python3-dev
 
 ## How to use the profiling scripts
 
+NOTE: While the m6809-gdb debugger is actively monitoring the BASIC program the performance of the monitored program will be greatly impacted. For games this could make the profiling session painfully long.
+
 Two terminal sessions are needed
 
 ### First Terminal session
