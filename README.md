@@ -81,7 +81,9 @@ NOTE: Before starting the m6809-gdb debugger, you may want to delete the log fil
 $ m6809-gdb -x basic_variables_lookup.gdb -x dump_variable_tables.gdb
 ```
 
-NOTE: If m6809-gdb fails to connect check the xroar session to make sure it didn't fail to create the listening port 65520 at startup.
+NOTE: If m6809-gdb fails to connect check the xroar session to make sure it didn't fail to create the listening port 65520 at startup. You might see a line as follows in the xroar output:
+
+`[gdb] WARNING: bind 127.0.0.1:65520 failed`
 
 
 ### When done with BASIC program
