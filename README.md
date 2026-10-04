@@ -49,6 +49,8 @@ sudo apt install build-essential texinfo wget python3-dev
 
 NOTE: While the m6809-gdb debugger is actively monitoring the BASIC program the performance of the monitored program will be greatly impacted. For games this could make the profiling session painfully long.
 
+NOTE: It's possible, but haven't had the time to check it yet, that the `-no-ratelimit` option on xroar might speed up the analysis greatly. To be followed up.
+
 Two terminal sessions are needed
 
 ### First Terminal session
