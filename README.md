@@ -152,19 +152,3 @@ $  grep "Array Lookup" basic_variables_log.log | sort | uniq -c | sort -n -r
 # Next Steps
 
 With the new information gathered from the profiling results some changes to the BASIC code might be required. Changing the variable or array declaration order (using DIM at the start of the program, for example) may improve the performance. Retest until satisfied with the results.
-
-# CoCo Nation 485
-
-As briefly highlighted on YouTube's CoCo Nation 485 (01:59:39)
-
-https://www.youtube.com/watch?v=mkzOLlQkPiQ&t=7179s
-
-Thank You for the mention. :-)
-
-# World Of Dragon
-
-Mentioned on World Of Dragon.
-
-https://archive.worldofdragon.org/phpBB3/viewtopic.php?f=5&t=11374
-
-Makes an interesting point that it probably should support Dragon BASIC.
