@@ -17,6 +17,9 @@
 ####
 #
 
+# turn off pagination at start so we do not get any pauses, ever
+set pagination off
+
 # connect to xroar already running in a different terminal session
 target remote 127.0.0.1:65520
 
@@ -46,7 +49,6 @@ info breakpoints
 # setup the log output
 set logging file basic_variables_log.log
 set logging enabled on
-set pagination off
 
 # following command works if m6809-gdb supports python, remove it if python not supported
 python import datetime; gdb.execute(f'printf "Log Start: {datetime.datetime.now()}\\n"')
